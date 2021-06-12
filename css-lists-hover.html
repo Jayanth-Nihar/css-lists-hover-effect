@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css-List-Item</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #0ab;
+            color: #fff;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ol{
+            width: 300px;
+            list-style: none;
+        }
+        ol li{
+            font-size: 1.2rem;
+            padding: 20px 30px;
+            margin: 10px 0;
+            background: rgb(23, 23, 23);
+            z-index: 100;
+            position: relative;
+            cursor: pointer;
+            transition: all .4s;
+        }
+        ol li::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            z-index: -1;
+            transition: all .4s;
+        }
+        ol li:hover::before{
+            width: 100%;
+        }
+        ol li:nth-child(1)::before{
+            background: #4285f4;
+        }
+        ol li:nth-child(2)::before{
+            background: #db4437;
+        }
+        ol li:nth-child(3)::before{
+            background: #f4b400;
+        }
+        ol li:nth-child(4)::before{
+            background: #0f9d58;
+        }
+        ol li:hover{
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ol>
+            <li>Google</li>
+            <li>Amazon</li>
+            <li>Microsoft</li>
+            <li>Apple</li>
+        </ol>
+    </div>
+</body>
+</html>
